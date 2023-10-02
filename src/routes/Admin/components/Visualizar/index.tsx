@@ -11,7 +11,7 @@ export default function Visualizar(){
         dúvidas:
         necessito consumir os dados e os organizar no visualizar 
         descobrir como colocar ícone de visualização no index page, e que ele ligue com o componente Visualizar*/
-        
+        aaaaaa
         </>
     );
 }
