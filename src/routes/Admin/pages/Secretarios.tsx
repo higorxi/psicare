@@ -12,6 +12,7 @@ import Cadastrar from "../components/Cadastrar";
 import Editar from "../components/Editar";
 import { useRouter } from 'next/router';
 import Visualizar from "../components/Visualizar";
+import Link from "next/link";
 
 export default function Pacientes({
   user,
@@ -271,12 +272,14 @@ export default function Pacientes({
         </Flex>
       </Flex>
       <Flex mt="4" w="100%">
+        <Link href='/visualizar' mobile={mobile} nome="Higor" cpf="065.127.431-13" telefone="62 98519-4415" turno="Matutino" email="higorteste@gmail.com">
         <Table
           headers={["ID", "Nome", "CPF", "Turno", ""]}
           data={result ? result : data}
           isEditing={isEditing}
           setIsEditing={setIsEditing}
         />
+        </Link>
       </Flex>
       <Cadastrar
         cadastrarOpened={cadastrarOpened}
@@ -287,9 +290,6 @@ export default function Pacientes({
         editData={isEditing}
         editarOpened={isEditing ? true : false}
         setEditarOpened={setIsEditing}
-      />
-      <Visualizar
-       mobile={false} nome="Higor" cpf="065.127.431-13" telefone="62 98519-4415" turno="Matutino" email="higorteste@gmail.com"
       />
     </Flex>
   );

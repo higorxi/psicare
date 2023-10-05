@@ -37,6 +37,7 @@ export default function Button({
       mb={mb ? mb : "0"}
       onClick={onPress}
       color={filled ? "#FFF" : "#C760EB"}
+      width={''}
     >
       {icon && <Icon as={icon} fontSize="1.2rem" mr="4" />}
       <Text fontWeight={500}>{label}</Text>

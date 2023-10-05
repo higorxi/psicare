@@ -11,6 +11,7 @@ export default function Visualizar({
     cpf,
     telefone,
     turno,
+    setMobile,
 }:{
     mobile:boolean;
     nome:string;
@@ -18,6 +19,7 @@ export default function Visualizar({
     cpf:string;
     telefone:string;
     turno:string;
+    setMobile: false;
 }){
     const router = useRouter();
 
