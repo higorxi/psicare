@@ -10,6 +10,8 @@ import { useEffect, useRef, useState } from "react";
 import { removeAcentos } from "../../../utils/removeAcentos";
 import Cadastrar from "../components/Cadastrar";
 import Editar from "../components/Editar";
+import { useRouter } from 'next/router';
+import Visualizar from "../components/Visualizar";
 
 export default function Pacientes({
   user,
@@ -218,7 +220,11 @@ export default function Pacientes({
       setResult(undefined);
     }
   }, [searchTerm]);
+  const router = useRouter();
 
+  const navegarParaOutraPasta = () => {
+    router.push("./Visualizar"); 
+  };
   return (
     <Flex
       p="4"
@@ -281,6 +287,9 @@ export default function Pacientes({
         editData={isEditing}
         editarOpened={isEditing ? true : false}
         setEditarOpened={setIsEditing}
+      />
+      <Visualizar
+       mobile={false} nome="Higor" cpf="065.127.431-13" telefone="62 98519-4415" turno="Matutino" email="higorteste@gmail.com"
       />
     </Flex>
   );

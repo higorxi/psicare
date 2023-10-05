@@ -23,7 +23,7 @@ function Dashboard() {
 
       <Flex flexDir="column" w="100%">
         <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-
+        
         {activeTab === "Secretários" && (
           <Secretarios user={user} activeTab={activeTab} />
         )}

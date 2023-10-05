@@ -6,6 +6,7 @@ import { Icon } from "@chakra-ui/react";
 import { BiEdit, BiEditAlt } from "react-icons/bi";
 import { FiEdit, FiEdit2, FiTrash2 } from "react-icons/fi";
 import { formatarCPF } from "../../utils/cpf";
+import { table } from "console";
 
 export default function Table({
   headers,
@@ -28,6 +29,7 @@ export default function Table({
         width: mobile ? "calc(100vw - 40px)" : "calc(100vw - 350px)",
         paddingRight: mobile ? 10 : 30,
       }}
+      selectionMode='single'
     >
       <TableNextUI.Header>
         {headers.map((header) => {
@@ -51,7 +53,7 @@ export default function Table({
                   as={FiEdit2}
                   color="#C760EB"
                 />
-                <Icon cursor="pointer" ml="4" as={FiTrash2} color="#C760EB" />
+                <Icon cursor="pointer" ml="4" as={FiTrash2} color="#C760EB"  />
               </TableNextUI.Cell>
             </TableNextUI.Row>
           );
