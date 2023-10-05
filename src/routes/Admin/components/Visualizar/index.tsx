@@ -40,63 +40,78 @@ export default function Visualizar({
           <Flex
             flexDir="column"
             py="4"
-            w="50%"
+            w="100%"
+            px="7"
           >
-            /* 1 - Replicar esse componente 'text' para todos os outros inputs
-               2 - Fazer aluno, secretário e professor
-               3 - Transformar em uma página total, aproveitando o componente de barra lateral
-               4 - Linkar todas as rotas
-            */
             <Text fontSize='1rem' color="#787878">
             Nome
-            </Text> 
+            </Text>
+          <Box borderBottom='1px' borderColor='gray.200'>
             <Text fontSize='1.6rem' color="#787878">
             {nome}
             </Text>
-            
+          </Box> 
             {mobile ? (
               <Flex
                 w="100%"
-                flexDir="column"
+                flexDir="row"
                 justify="space-between"
               >
-                <Input
-                  label="CPF"
-                  placeholder={cpf}
-                  disabled
-                />
-                <Flex w={10} />
-                <Input
-                  label="Telefone"
-                  placeholder={telefone}
-                  disabled
-                />
+                <Box gridColumn='initial' borderBottom='1px' borderColor='gray.200'>
+                  <Text fontSize='1rem' color="#787878">
+                  E-mail
+                  </Text>
+                    <Text fontSize='1.6rem' color="#787878">
+                    {email}
+                    </Text>
+                  <Text fontSize='1rem' color="#787878">
+                  Telefone
+                  </Text>
+                    <Text fontSize='1.6rem' color="#787878">
+                    {telefone}
+                    </Text>
+                </Box> 
               </Flex>
             ) : (
-              <Flex w="100%"  justify="space-between">
-                <Input
-                  disabled
-                  label="CPF"
-                  placeholder={cpf}
-                />
-                <Flex w={10} />
-                <Input
-                  label="Telefone"
-                  placeholder={telefone}
-                  disabled
-                />
-              </Flex>
+              <Flex
+              w="100%"
+              flexDir="row"
+              justify="space-between"
+            >
+              <Box gridColumn='revert' borderBottom='1px' borderColor='gray.200'>
+              <Text fontSize='1rem' color="#787878">
+              Email
+              </Text>
+                <Text fontSize='1.6rem' color="#787878">
+                {email}
+                </Text>
+              </Box>
+              <Box borderBottom='1px' borderColor='gray.200' gridColumn='revert'>
+              <Text fontSize='1rem' color="#787878">
+              Telefone
+              </Text>
+                <Text fontSize='1.6rem' color="#787878">
+                {telefone}
+                </Text>
+              </Box> 
+            </Flex>
             )}
-            <Input
-              label="E-mail"
-              placeholder={email}
-              disabled
-            />
-            <Input
-              label="Turno"
-              placeholder={turno}
-              disabled
-            />
+              <Box borderBottom='1px' borderColor='gray.200' gridColumn='revert'>
+                <Text fontSize='1rem' color="#787878">
+                Turno
+                </Text>
+                <Text fontSize='1.6rem' color="#787878">
+                {turno}
+                </Text>
+              </Box>
+              <Box borderBottom='1px' borderColor='gray.200' gridColumn='revert'>
+                <Text fontSize='1rem' color="#787878">
+                CPF
+                </Text>
+                <Text fontSize='1.6rem' color="#787878">
+                {cpf}
+                </Text>
+              </Box>
         </Flex>
         <Button
         onPress={navegarParaOutraPasta}
@@ -105,3 +120,11 @@ export default function Visualizar({
         </>
       );
 }
+
+/* Necessito ligar a label de E-mail e Telefone com o border bottom, além de conseguir fazer  o telefone ficar ao centro, enquanto o e-mail está ao inicio
+
+Outra coisa é tentar  pesquisar como criar a página de fato, as rotas e consumo podem ser dúvidas retiradas lá dentro.
+
+Iniciar Visualizar dados do professor tbm, deixando para a próxima o dos pacientes, a página de alunos deverá ser conversado, já que seu design foge desse padrão.
+
+*/
