@@ -289,7 +289,7 @@ export default function Pacientes({
         setEditarOpened={setIsEditing}
       />
       <Visualizar
-       mobile={false} nome="Higor" cpf="065.127.431-13" telefone="62 98519-4415" turno="Matutino" email="higorteste@gmail.com"
+       mobile={false} nome="Higor Giovane Monteiro Torres" cpf="065.127.431-13" telefone="62 98519-4415" turno="Matutino" email="higorteste@gmail.com"
       />
     </Flex>
   );
